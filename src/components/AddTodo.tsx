@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers';
 import * as yup from 'yup';
 import { TodoContextType } from '../contexts/TodoContextType';
+import { useNavigate } from 'react-router-dom';
 
 const schema = yup.object().shape({
   title: yup.string().required('Tarefa inválida'),
@@ -19,10 +20,13 @@ const AddTodo = () => {
     resolver: yupResolver(schema),
   });
 
+  let navigate = useNavigate();
+
   const onSubmit = (data: AddTodoForm, e: any) => {
     addTodo(data.title);
     e.target.reset();
-    window.location.href = '/';
+    navigate('/');
+    // window.location.href = '/';
   };
 
   return (

@@ -28,7 +28,10 @@ const TodoProvider = (props: any) => {
 
   const removeTodo = (todo: Todo) => {
     const index = todos.indexOf(todo);
-    setTodos(todos.filter((todo, i) => i !== index));
+    const filteredTodos = todos.filter((todo, i) => i !== index);
+
+    setTodos(filteredTodos);
+    if (filteredTodos.length === 0) localStorage.clear();
   };
 
   const toggle = (todo: Todo) => {
