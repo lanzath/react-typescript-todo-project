@@ -1,0 +1,6 @@
+{
+  "editor.autoIndent": "advanced",
+  "editor.tabSize": 2,
+  "trailing-spaces.trimOnSave": true,
+  "editor.formatOnSave": true,
+}
