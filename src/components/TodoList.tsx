@@ -15,11 +15,12 @@ const TodoList = () => {
           <th>Tarefa</th>
           <th></th>
         </tr>
-
+      </thead>
+      <tbody>
         {todos?.map((todo) => (
           <TodoListItem todo={todo} key={todo.id} />
         ))}
-      </thead>
+      </tbody>
     </table>
   );
 };
